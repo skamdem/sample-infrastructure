@@ -1,4 +1,22 @@
 terraform {
+
+  # backend "remote" {
+  #   hostname     = "app.terraform.io"
+  #   organization = "skamdem-org"
+
+  #   workspaces {
+  #     name = "getting-started"
+  #   }
+  # }
+
+  cloud {
+    organization = "skamdem-org"
+
+    workspaces {
+      name = "getting-started"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,5 +26,5 @@ terraform {
 }
 
 locals {
-  project_name = "temp_project"
+  project_name = "some_instance"
 }
